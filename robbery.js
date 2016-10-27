@@ -250,7 +250,7 @@ exports.getAppropriateMoment = function (schedule, duration, workingHours) {
          * @returns {Boolean}
          */
         tryLater: function () {
-            if (lastSuccess === null) {
+            if (lastSuccess === null || freeIntervals.length === 0) {
                 return false;
             }
             reduceFreeIntervals(freeIntervals[0].start, freeIntervals[0].start + 30);
