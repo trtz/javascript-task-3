@@ -65,7 +65,7 @@ function reduceFreeIntervals(startBusy, endBusy) {
         var endFree = freeIntervals[i].end;
         var updStartFree = isBetween(endBusy, startFree, endFree) ? endBusy : startFree;
         var updEndFree = isBetween(startBusy, startFree, endFree) ? startBusy : endFree;
-        if (startBusy < startFree && endFree < endBusy) {
+        if (startBusy <= startFree && endFree <= endBusy) {
             freeIntervals.splice(i, 1);
             i--;
             continue;
